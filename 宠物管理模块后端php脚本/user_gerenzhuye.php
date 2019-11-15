@@ -1,17 +1,10 @@
-<!DOCTYPE html> 
-<html> 
-<body> 
-
-<h1>My first PHP page</h1> 
 
 <?php
 //连接数据库
 include("connection.php");
-$id=;//自增id等于多少？
-$type=;//0配对、1领养、2转让、3寄养
-
-
-$sql = "SELECT himg,P_class,breed,nickname,age,sex,supplement FROM notice where type="$type" AND id="$id";
+header('Content-Type:application/json');
+$account=123456;//账号等于多少？
+$sql = "SELECT nickname,sex,age,area FROM user where account='123456'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -30,7 +23,6 @@ if(mysqli_num_rows($result)>0)
 else{
     $code=0;
 }
-
 $json = json_encode(array(
     "code"=>$code,
     "data"=>$data
@@ -42,6 +34,3 @@ echo($json);
 $conn->close();
 ?>
 
-
-</body> 
-</html>

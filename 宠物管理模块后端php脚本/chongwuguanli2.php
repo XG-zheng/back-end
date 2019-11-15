@@ -10,7 +10,7 @@ include("connection.php");
 $id=;//自增id等于多少？
 $type=;//0配对、1领养、2转让、3寄养
 
-$himg=
+$himg=$_GET['himg'];
 $P_class=
 $breed=
 $nickname=
